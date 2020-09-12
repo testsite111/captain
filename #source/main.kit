@@ -1,0 +1,55 @@
+<div class="main">
+    <div class="container">
+    	<h1>¡Ay caramba!</h1>
+        <div class="main__body">
+        	<div class="main__form">
+	            <form action="/" method="post" enctype="multipart/form-data" onsubmit="return false;">
+	            	<div class="main__inputs">
+	            		<p><label for="name"></label><input type="text" name="name" placeholder="Название" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Название'" autocomplete="off" minlength="3" maxlength="20" class="main__name" required></p>
+						<p><label for="year"></label><input type="year" name="year" placeholder="Год" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Год'" autocomplete="off" minlength="4" maxlength="4" pattern="[0-9]{1,4}" class="main__year" required></p>
+						<p><label for="price">Цена</label><input type="price" name="price" placeholder="Цена" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Цена'" autocomplete="off" minlength="3" maxlength="7" class="main__price" pattern="[0-9]{1,7}" required></p>
+	            	</div>
+					<p class="main__textarea"><input name="descp" placeholder="Описание" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Описание'" class="main__descp" required></p>
+					<div class="main__submit">
+						<div class="main__colors">
+							<label for="color">Цвет</label>
+							<div class="main__color">
+								<input type="text" value="white" onclick="clr1()">
+								<input type="text" value="black" onclick="clr2()">
+								<input type="text" value="#C4C4C4" onclick="clr3()">
+								<input type="text" value="#DD1C10" onclick="clr4()">
+								<input type="text" value="#77CF61" onclick="clr5()">
+							</div>
+							<input type="text" name="color" class="color" required style="height:0;border:1px solid transparent">
+						</div>
+						<div class="main__status">
+							<select name="status" class="status" required>
+								<option value="">Статус</option>
+								<option value="В наличии">В наличии</option>
+								<option value="Ожидается">Ожидается</option>
+								<option value="Нет в наличии">Нет в наличии</option>
+							</select>
+						</div>
+						<div class="main__btn">
+							<button type="submit" class="submit" onclick="add()">Отправить</button>
+						</div>
+					</div>
+				</form>
+			</div>
+			<h2>АВТОМОБИЛИ В НАЛИЧИИ</h2>
+			<div class="main__table">
+				<table width="100%">
+					<tr>
+						<th>Название</th>
+						<th>Год</th>
+						<th>Цвет</th>
+						<th>Статус</th>
+						<th>Цена</th>
+						<th></th>
+					</tr>
+					<tbody class="table"></tbody>
+				</table>
+			</div>
+        </div>
+    </div>
+</div>

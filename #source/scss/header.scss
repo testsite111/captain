@@ -1,0 +1,30 @@
+$j: center;
+$c: center;
+$w: wrap;
+
+@mixin jcw($j, $c, $w) {
+  display: flex;
+  justify-content: $j;
+  align-items: $c;
+  flex-wrap: $w;
+}
+
+.header {
+	background: #282D30;
+	height: 102px;
+	&__body {
+		@include jcw($j, $c, $w);
+	}
+}
+
+@media (max-width: 720px) {}
+@media (max-width: 360px) {
+	.header {
+		@include jcw($j, $c, $w);
+		height: 102px;
+		img {
+			width: 300px;
+			height: 63px;
+		}
+	}
+}

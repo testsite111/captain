@@ -1,0 +1,28 @@
+$j: center;
+$c: center;
+$w: wrap;
+
+@mixin jcw($j, $c, $w) {
+  display: flex;
+  justify-content: $j;
+  align-items: $c;
+  flex-wrap: $w;
+}
+
+.footer {
+	background: #282D30;
+	&__body {
+		font-weight: 300;
+		font-size: 11px;
+		line-height: 13px;
+		text-align: center;
+		color: #fff;
+		padding: 37px 0;
+		a {
+			color: #fff;
+		}
+	}
+}
+
+@media (max-width: 720px) {}
+@media (max-width: 360px) {}

@@ -1,0 +1,363 @@
+$j: center;
+$c: center;
+$w: wrap;
+
+@mixin jcw($j, $c, $w) {
+  display: flex;
+  justify-content: $j;
+  align-items: $c;
+  flex-wrap: $w;
+}
+
+.main {
+	display: flex;
+	flex: 1 1 auto;
+	position: relative;
+	width: 100%;
+	h1 {
+		font-weight: bold;
+		font-size: 42px;
+		line-height: 49px;
+		text-align: center;
+		color: #282D30;
+		margin: 55px 0 35px 0;
+	}
+	&__body {
+		width: 100%;
+		max-width: 958px;
+		margin: 0 auto;
+		h2 {
+			font-size: 20px;
+			line-height: 23px;
+			color: #282D30;
+			border-left: 3px solid #8B8B8B;
+			padding-left: 12px;
+			margin-top: 134px;
+		}
+	}
+	&__form {
+		form {
+			input, select, label {
+				font-size: 14px;
+				line-height: 24px;
+				color: #8B8B8B;
+				width: 100%;
+			}
+			input, select {
+				background: #FFFFFF;
+				border: 1px solid #DADADA;
+				box-sizing: border-box;
+				padding: 0 10px;
+				height: 40px;
+				border-bottom: 2px solid #DADADA;
+				cursor: pointer;
+			}
+			input:valid,
+			select:valid,
+			input:focus:valid,
+			select:focus:valid,
+			input:focus:required:valid,
+			select:focus:required:valid {
+			    border-bottom: 2px solid #282D30;
+			}
+			input:invalid,
+			select:invalid {
+			    border-bottom: 2px solid #DADADA;
+			}
+			input:focus:invalid,
+			select:focus:invalid,
+			input:focus:required:invalid,
+			select:focus:required:invalid {
+			    border-bottom: 2px solid #C3002F;
+			}
+			label {
+				@include jcw(flex-start, $c, $w);
+				height: 24px;
+			}
+			p {
+				label {
+					padding: 0 10px;
+				}
+			}
+		}
+	}
+	&__inputs, &__submit {
+		@include jcw($j, $c, $w);
+		margin: 0 -10px;
+		p, div {
+			flex: 0 0 33.33%;
+			padding: 0 10px;
+		}
+		div {
+			@include jcw($j, $c, $w);
+		}
+	}
+	&__textarea {
+		margin-top: 30px;
+	}
+	&__submit {
+		margin-top: 32px;
+		div:first-of-type {
+			justify-content: flex-start;
+		}
+		button {
+			background: #C3002F;
+			border-radius: 4px;
+			width: 100%;
+			height: 44px;
+			font-weight: bold;
+			font-size: 16px;
+			line-height: 36px;
+			color: #fff;
+			text-transform: uppercase;
+			&:hover {
+				box-shadow: 0 0 5px 5px #ccc;
+				-webkit-transition: 0.1s ease-out 0.1s;
+				-moz-transition: 0.1s ease-out 0.1s;
+				-o-transition: 0.1s ease-out 0.1s;
+				transition: 0.1s ease-out 0.1s;
+			}
+			&::after {
+				content: url('/img/arrow.svg');
+				margin-left: 20px;
+			}
+		}
+	}
+	&__color {
+		width: 100%;
+		height: 25px;
+    	flex-wrap: nowrap !important;
+    	margin: 12px -22px 0;
+    	padding-top: 10px;
+		input {
+			background: #ccc;
+			border: 1px solid #8B8B8B !important;
+			box-sizing: border-box;
+			width: 19px !important;
+			height: 22px !important;
+			border-radius: 50%;
+			margin: 0 12px;
+			&:focus {
+				border: 3px solid #C3002F !important;
+				-webkit-transition: 0.2s ease-out 0.2;
+				-moz-transition: 0.2s ease-out 0.2s;
+				-o-transition: 0.2s ease-out 0.2s;
+				transition: 0.2s ease-out 0.2s;
+				margin: 0 10px;
+				height: 25px !important;
+			}
+			&:first-of-type {
+				background: #fff;
+			}
+			&:nth-of-type(2) {
+				background: #000;
+			}
+			&:nth-of-type(3) {
+				background: #C4C4C4;
+			}
+			&:nth-of-type(4) {
+				background: #DD1C10;
+			}
+			&:last-of-type {
+				background: #77CF61;
+			}
+		}
+	}
+	&__status {
+		select {
+			padding: 12px 0;
+			option {
+				&:first-of-type {
+					display: none;
+				}
+			}
+		}	
+	}
+	&__table {
+		margin-top: 30px;
+		padding-bottom: 266px;
+		table {
+			border-collapse: collapse;
+			tr {
+				border-bottom: 1px solid #DADADA;
+				&:last-of-type {
+					border: none;
+				}
+				th {
+					background: #C3002F;
+					text-align: left;
+					font-size: 14px;
+					line-height: 24px;
+					padding: 12px 0;
+					color: #fff;
+					&:first-of-type {
+						border-radius: 4px 0 0 0;
+						padding-left: 15px;
+					}
+					&:nth-of-type(2) {
+						padding-left: 15px;
+					}
+					&:last-of-type {
+						border-radius: 0 4px 0 0;
+					}
+				}
+				td {
+					background: #F5F6F6;
+					font-weight: 300;
+					font-size: 15px;
+					line-height: 20px;
+					padding: 16px 0;
+					color: #323232;
+					&:first-of-type {
+						padding-left: 15px;
+					}
+					&:nth-of-type(3) {
+						div {
+							background: #ccc;
+							border: 1px solid #8B8B8B;
+							box-sizing: border-box;
+							width: 19px;
+							height: 19px;
+							border-radius: 50%;
+							margin: 0 7px;
+						}
+					}
+					span {
+						font-size: 13px;
+						color: #8B8B8B;
+					}
+					button {
+						width: 85px;
+						height: 29px;
+						background: none;
+						border-radius: 20px;
+						font-size: 14px;
+						&:hover {
+							background: #282D30;
+							color: #fff;
+							-webkit-transition: 0.1s ease-out 0.1s;
+						    -moz-transition: 0.1s ease-out 0.1s;
+						    -o-transition: 0.1s ease-out 0.1s;
+						    transition: 0.1s ease-out 0.1s;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 720px) {
+	.main {
+		padding: 0 10px;
+		&__body {
+			h2 {
+				margin-top: 60px;
+			}
+		}
+		&__table {
+			table {
+				tr {
+					td {
+						&:first-of-type {
+							width: 256px !important;
+						}
+						&:last-of-type {
+							padding: 0;
+						}
+						button {
+							margin-right: -15px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media (max-width: 360px) {
+	.main {
+		padding: 0;
+		h2 {
+			margin: 60px 10px 0;
+		}
+		&__form {
+			padding: 0 10px;
+		}
+		&__inputs {
+			p {
+				flex: 0 0 50%;
+				&:first-of-type {
+					flex: 0 0 100%;
+				}
+				&:nth-of-type(2),
+				&:last-of-type {
+					position: relative;
+					top: 10px;
+				}
+				&:nth-of-type(2) {
+					right: -180px;
+				}
+				&:last-of-type {
+					left: -180px;
+				}
+			}
+		}
+		&__colors {
+			flex: 0 0 100% !important;
+		}
+		&__status, &__btn {
+			flex: 0 0 50% !important;
+			margin-top: 35px;
+		}
+		&__textarea {
+			margin-top: 40px;
+		}
+		&__table {
+			margin-top: 16px;
+			padding-bottom: 0;
+			table {
+				tbody {
+					background: #F5F6F6;
+					tr {
+						@include jcw(space-between, $c, $w);
+						padding: 15px 20px 0 20px;
+						&:first-of-type {
+							display: none;
+						}
+						td {
+							&:first-of-type {
+								width: 145px !important;
+								padding: 0;
+							}
+							&:nth-of-type(2) {
+								order: 1;
+								padding: 0 !important;
+								margin-top: 35px;
+							}
+							&:nth-of-type(3) {margin: -1rem 0 0 2rem}
+							&:nth-of-type(4) {
+								order: 2;
+								margin-top: 35px;
+								margin-left: -5rem;
+							}
+							&:nth-of-type(5) {margin-top: -1rem}
+							&:last-of-type {
+								order: 3;
+								margin-top: 35px;
+								margin-right: 1rem;
+							}
+							span {
+								width: 310px;
+								position: absolute;
+							}
+							button {
+								background: #282D30;
+								color: #fff;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
